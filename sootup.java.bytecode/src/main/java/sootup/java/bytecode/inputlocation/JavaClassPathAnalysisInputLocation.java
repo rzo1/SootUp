@@ -94,7 +94,9 @@ public class JavaClassPathAnalysisInputLocation implements AnalysisInputLocation
     cpEntries = explodeClassPath(classPath);
 
     if (cpEntries.isEmpty()) {
-      throw new IllegalStateException("Empty class path is given.");
+      throw new IllegalStateException(
+          "Empty class path is given. Executed WorkingDirectory is "
+              + new File("").getAbsolutePath());
     }
   }
 
